@@ -5,8 +5,9 @@
 
 
 EN_cardError_t getCardHolderName(ST_cardData_t* card){
- char data[25];
+ 
  char counter=0 , i=0; 
+ char data[25];
  printf("Enter name as on card [<=24 (char+' ')]: ");
 
  gets(data);
@@ -40,7 +41,7 @@ EN_cardError_t getCardExpiryDate(ST_cardData_t* card){
 
  char data[6];
  char i=0;
- printf("Enter expiry date [mm/yy] : ");
+ printf("Enter expiry date as on card [mm/yy] : ");
  
  gets(data);
  
@@ -62,3 +63,38 @@ EN_cardError_t getCardExpiryDate(ST_cardData_t* card){
 }
 
 
+
+EN_cardError_t getCardPAN(ST_cardData_t* card){
+
+  char count=0, i=0;
+  char data[17];
+
+  printf("Enter PAN as on card [16 number] : ");
+
+  scanf("%s",data);
+
+  for ( i = 0; data[i] ; i++)
+  {
+     // check if all data are numbers 
+     if(!((data[i]>='0')&&(data[i]<='9'))){
+
+       return INVALID_PAN;
+     }
+
+     count++;
+  }
+  
+  // check for overflow
+ if(count!=16){
+    
+    return INVALID_PAN;
+ }
+
+  // copy valid PAN
+  for ( i = 0; i <= count; i++)
+  {
+    card->PAN[i]=data[i];
+  }
+
+ return VALID;
+}

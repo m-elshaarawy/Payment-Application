@@ -8,7 +8,7 @@ typedef struct {
 
 char name[25];     // card holder name 
 char ExpDate[6];   // card expiry date mm/yy
-char PAN[20];      // card PAN
+char PAN[17];      // card PAN
 
 }ST_cardData_t;
 
