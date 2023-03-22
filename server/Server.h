@@ -9,6 +9,10 @@
 
 typedef struct {
 
+    char server_PAN[17];
+    EN_accountState_t account_state;
+    unsigned int funds;
+
 }ST_accountDatabase_t;
 
 
@@ -19,8 +23,8 @@ typedef struct {
 
 }ST_transactionData_t;
 
-typedef struct 
-{
+typedef struct {
+    
     unsigned int trans_number;
     ST_transactionData_t trans_data;
 
@@ -46,7 +50,7 @@ typedef enum {
 
 /* Function prototypes */
 
-EN_transactionState_t receiveTransactionData();
+EN_transactionState_t receiveTransactionData(ST_transactionData_t* transData);
 EN_accountState_t isValidAccount();
 EN_transactionState_t isAmountAvailable();
 EN_transactionState_t saveTransaction();
