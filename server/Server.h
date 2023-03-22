@@ -55,7 +55,7 @@ typedef struct {
 EN_transactionState_t receiveTransactionData(ST_transactionData_t* transData,ST_cardData_t* cardData,ST_terminalData_t* termData);
 EN_accountState_t isValidAccount(ST_transactionData_t* transData,ST_accountDatabase_t* accountData);
 EN_transactionState_t isAmountAvailable(ST_transactionData_t* transData,ST_accountDatabase_t* accountData);
-EN_transactionState_t saveTransaction(ST_accountDatabase_t* account_data,ST_transDatabase_t* trans_data);
+EN_transactionState_t saveTransaction(ST_accountDatabase_t* accountData ,ST_transDatabase_t* trans_database , ST_transactionData_t* transData );
 
 
 #endif // SERVER_H_

@@ -94,3 +94,19 @@ EN_transactionState_t isAmountAvailable(ST_transactionData_t* transData,ST_accou
 }
 
 
+EN_transactionState_t saveTransaction(ST_accountDatabase_t* accountData ,ST_transDatabase_t* trans_database , ST_transactionData_t* transData ){
+
+    // update account balance
+   accountData[index].funds = accountData[index].funds - transData->term_data.transAmount ;
+   
+   // increasing transaction number 
+   trans_database[trans_count].trans_number=(trans_count+1);
+   
+   // save transaction data
+   trans_database[trans_count].trans_data.term_data = transData->term_data;
+   trans_database[trans_count].trans_data.card_data = transData->card_data;
+
+    trans_count++;
+
+    return VALID_TRANS;
+}
