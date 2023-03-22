@@ -26,3 +26,22 @@ for(i=0;i<6;i++){
 
 return DONE;
 }
+
+EN_terminalError_t isCardExpired(ST_terminalData_t *data , ST_cardData_t card){
+
+         // check for yy
+if(((card.ExpDate[3]-'0')+(card.ExpDate[4]-'0'))<((data->transDate[3]-'0')+(data->transDate[4]-'0'))){
+
+ return EXPIRED_CARD;
+        // check for mm
+}else if(((card.ExpDate[3]-'0')+(card.ExpDate[4]-'0'))==((data->transDate[3]-'0')+(data->transDate[4]-'0'))){
+
+  if(((card.ExpDate[0]-'0')+(card.ExpDate[1]-'0'))<((data->transDate[0]-'0')+(data->transDate[1]-'0'))){
+
+  return EXPIRED_CARD;
+  }
+
+}
+
+return DONE;
+}
