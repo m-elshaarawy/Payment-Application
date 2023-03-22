@@ -8,7 +8,8 @@
 /* data typs and structs */
 
 typedef struct {
-
+    
+    char accountName[25];
     char server_PAN[17];
     EN_accountState_t account_state;
     unsigned int funds;
@@ -50,10 +51,10 @@ typedef enum {
 
 /* Function prototypes */
 
-EN_transactionState_t receiveTransactionData(ST_transactionData_t* transData);
-EN_accountState_t isValidAccount();
-EN_transactionState_t isAmountAvailable();
-EN_transactionState_t saveTransaction();
+EN_transactionState_t receiveTransactionData(ST_transactionData_t* transData,ST_cardData_t* cardData,ST_terminalData_t* termData);
+EN_accountState_t isValidAccount(ST_transactionData_t* transData);
+EN_transactionState_t isAmountAvailable(ST_transactionData_t* transData);
+EN_transactionState_t saveTransaction(ST_accountDatabase_t* account_data,ST_transDatabase_t* trans_data);
 
 
 #endif // SERVER_H_
