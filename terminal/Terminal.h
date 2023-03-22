@@ -4,8 +4,11 @@
 #define TERMINAL_H_
 
 #include "../card/Card.h"
-#define MAX_AMOUNT    20000      // transaction limit
 
+/*********************************config*********************************/
+#define USE_MAX       1          // ( 1 ) to use MAX_AMOUNT ( 0 ) to not 
+#define MAX_AMOUNT    20000      // transaction limit
+/************************************************************************/
 
 /* data typs and structs */
 

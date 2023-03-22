@@ -47,7 +47,7 @@ return DONE;
 
 EN_terminalError_t getTransactionAmount(ST_terminalData_t* data){
 
-unsigned int amount;
+ int amount;
 printf("Enter transaction amount : ");
 // get transaction amount
 scanf("%d",&amount);
@@ -72,3 +72,34 @@ EN_terminalError_t isBelowMaxAmount(ST_terminalData_t *data){
 
     return DONE;
 }
+
+
+EN_terminalError_t setMaxAmount(ST_terminalData_t* data){
+
+  if(USE_MAX){
+
+  data->maxTransAmount=MAX_AMOUNT;
+  
+  return DONE;
+
+  }else{
+
+  int amount;
+printf("Enter transaction max amount : ");
+  // get transaction max amount
+  scanf("%d",&amount);
+
+ if(amount<=0){
+    
+    return INVALID_DATA;
+ }
+  // saving valid transaction amount
+  data->transAmount=amount;
+
+  
+  return DONE;
+  
+   }
+
+}
+
