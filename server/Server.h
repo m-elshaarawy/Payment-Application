@@ -1,9 +1,17 @@
 
-
+/**********************************************************************************************************************
+ *  FILE DESCRIPTION
+ *  -------------------------------------------------------------------------------------------------------------------
+ *         File:  <Server.h>
+ *       Module:  server
+ *  Description:  server header file
+ *       author: mohamed elshaarawy      
+ *********************************************************************************************************************/
 #ifndef SERVER_H_
 #define SERVER_H_
 
-#include "../terminal/Terminal.h"
+#include "Terminal.h"
+#include "string.h"
 
 /* data typs and structs */
 

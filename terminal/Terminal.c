@@ -1,5 +1,5 @@
 
-#include  "../terminal/Terminal.h"
+#include  "Terminal.h"
 
 
 EN_terminalError_t getTransactionDate(ST_terminalData_t* data){
