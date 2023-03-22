@@ -1,5 +1,5 @@
 
-#include  "Terminal.h"
+#include  "../terminal/Terminal.h"
 
 
 EN_terminalError_t getTransactionDate(ST_terminalData_t* data){
@@ -9,7 +9,7 @@ char date[6];
 
 printf("Enter transaction date  [mm/yy] : ");
 // get transDate
-scanf("%d",date);
+scanf("%s",date);
  // check the validity of the date
  if( date[5]!='\0' || date[2]!='/'  || (((date[0]-'0')*10+(date[1]-'0'))>12) || (((date[3]-'0')*10+(date[4]-'0'))>99) ){
 

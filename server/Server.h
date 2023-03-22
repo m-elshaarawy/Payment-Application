@@ -10,8 +10,8 @@
 #ifndef SERVER_H_
 #define SERVER_H_
 
-#include "Terminal.h"
-#include "string.h"
+#include "../terminal/Terminal.h"
+#include <string.h>
 
 /* data typs and structs */
 
