@@ -10,7 +10,7 @@
 #ifndef TERMINAL_H_
 #define TERMINAL_H_
 
-#include "Card.h"
+#include "../card/Card.h"
 
 /*********************************config*********************************/
 #define USE_MAX       1          // ( 1 ) to use MAX_AMOUNT ( 0 ) to not 

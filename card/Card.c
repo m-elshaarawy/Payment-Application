@@ -9,8 +9,8 @@ EN_cardError_t getCardHolderName(ST_cardData_t* card){
  char counter=0 , i=0; 
  char data[25];
  printf("Enter name as on card [<=24 (char+' ')]: ");
-
- gets(data);
+ 
+ scanf("%[^\n]%*c",data);
 
 for(i=0;data[i];i++){
 //checking for lowercase chars
@@ -70,8 +70,8 @@ EN_cardError_t getCardPAN(ST_cardData_t* card){
   char data[17];
 
   printf("Enter PAN as on card [16 number] : ");
-
-  scanf("%s",data);
+  
+  scanf(" %s",data);
 
   for ( i = 0; data[i] ; i++)
   {

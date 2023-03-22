@@ -1,11 +1,11 @@
 
-#include "Server.h"
+#include "../server/Server.h"
 
 static unsigned int trans_count=0; // hold transaction number  
 char index=0; // store index of valid accounts
 
 // small account database    contain  PAN , account_state , funds 
-static ST_accountDatabase_t accountDatabase[6]={
+ ST_accountDatabase_t accountDatabase[6]={
     {"AHMED MOHAMED","0676362769002729", ACTIVE  ,50000},
     {"ALI ALI","7012292292334563", ACTIVE  ,40000},
     {"MOHAMED ELSHAARAWY","3899713628095627", BLOCKED ,0},
@@ -15,7 +15,7 @@ static ST_accountDatabase_t accountDatabase[6]={
     };
 
 // transactions database 
-static ST_transDatabase_t transDatabase[200]={0};
+ ST_transDatabase_t transDatabase[200]={0};
 
 
 EN_transactionState_t receiveTransactionData(ST_transactionData_t* transData,ST_cardData_t* cardData,ST_terminalData_t* termData){

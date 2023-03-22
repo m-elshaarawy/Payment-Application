@@ -9,7 +9,7 @@
 #ifndef CARD_H_
 #define CARD_H_
 
-#include <stdio.h>
+//#include <stdio.h>
 
  /* data typs and structs */
 
