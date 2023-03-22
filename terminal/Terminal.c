@@ -2,13 +2,10 @@
 #include  "../terminal/Terminal.h"
 
 
-EN_terminalError_t getTransactionData(ST_terminalData_t* data){
+EN_terminalError_t getTransactionDate(ST_terminalData_t* data){
 
 char i=0;
 char date[6];
-printf("Enter transaction amount : ");
-// get transaction amount
-scanf("%d",&(data->transAmount));
 
 printf("Enter transaction date  [mm/yy] : ");
 // get transDate
@@ -42,6 +39,25 @@ if(((card.ExpDate[3]-'0')+(card.ExpDate[4]-'0'))<((data->transDate[3]-'0')+(data
   }
 
 }
+
+return DONE;
+}
+
+
+
+EN_terminalError_t getTransactionAmount(ST_terminalData_t* data){
+
+unsigned int amount;
+printf("Enter transaction amount : ");
+// get transaction amount
+scanf("%d",&amount);
+
+if(amount<=0){
+    
+    return INVALID_DATA;
+}
+// saving valid transaction amount
+data->transAmount=amount;
 
 return DONE;
 }

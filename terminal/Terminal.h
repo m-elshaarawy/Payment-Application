@@ -10,8 +10,8 @@
 /* data typs and structs */
 
 typedef struct {
- int transAmount ;
- int maxTransAmount;
+ unsigned int transAmount ;
+ unsigned int maxTransAmount;
  char transDate[6];
 
 }ST_terminalData_t;
@@ -27,7 +27,7 @@ typedef enum {
 
 /* Function prototypes */
 
-EN_terminalError_t getTransactionData(ST_terminalData_t* data);
+EN_terminalError_t getTransactionDate(ST_terminalData_t* data);
 EN_terminalError_t isCardExpired(ST_terminalData_t *data , ST_cardData_t card);
 EN_terminalError_t getTransactionAmount(ST_terminalData_t* data);
 EN_terminalError_t isBelowMaxAmount(ST_terminalData_t *data);
