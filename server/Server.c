@@ -82,3 +82,15 @@ EN_accountState_t isValidAccount(ST_transactionData_t* transData,ST_accountDatab
 }
 
 
+EN_transactionState_t isAmountAvailable(ST_transactionData_t* transData,ST_accountDatabase_t* accountData){
+
+    // check for funds amount
+   if( transData->term_data.transAmount <= accountData[index].funds ){
+
+    return AVAILABLE;
+   }
+
+   return UNAVAILABLE;
+}
+
+
