@@ -2,6 +2,7 @@
 #include "Server.h"
 
 static unsigned int trans_count=0; // hold transaction number  
+char index=0; // store index of valid accounts
 
 // small account database    contain  PAN , account_state , funds 
 static ST_accountDatabase_t accountDatabase[6]={
@@ -50,3 +51,34 @@ transData->term_data.transDate[i]=termData->transDate[i];
 
   return VALID_TRANS;  
 }
+
+
+EN_accountState_t isValidAccount(ST_transactionData_t* transData,ST_accountDatabase_t* accountData){
+  
+  char i=0;
+  for(i=0;i<6;i++){
+   
+   // check account name 
+  if(strcmp(transData->card_data.name, accountData[i].accountName)==0){
+
+   // check account PAN
+    if(strcmp(transData->card_data.PAN, accountData[i].server_PAN)==0){
+
+       // ckeck account state
+          if((accountData[i].account_state)==ACTIVE){
+             index=i; // store account index
+           return ACTIVE;
+          }else{
+            return INVALID_ACCOUNT;
+          }
+
+    }
+
+  }
+    
+  }
+  
+  return INVALID_ACCOUNT;
+}
+
+
