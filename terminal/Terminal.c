@@ -61,3 +61,14 @@ data->transAmount=amount;
 
 return DONE;
 }
+
+
+EN_terminalError_t isBelowMaxAmount(ST_terminalData_t *data){
+
+    if(data->maxTransAmount < data->transAmount){
+
+        return EXCEED_LIMIT;
+    }
+
+    return DONE;
+}

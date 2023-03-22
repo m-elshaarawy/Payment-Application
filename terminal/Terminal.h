@@ -20,7 +20,7 @@ typedef enum {
 
  INVALID_DATA,
  EXPIRED_CARD,
- BELOW_MAX_AMOUNT,
+ EXCEED_LIMIT,
  DONE
 }EN_terminalError_t;
 
