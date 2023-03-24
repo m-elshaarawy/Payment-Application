@@ -9,7 +9,7 @@ EN_cardError_t getCardHolderName(ST_cardData_t* card){
  char counter=0 , i=0; 
  char data[25];
  printf("Enter name as on card [<=24 (char+' ')]: ");
- 
+ fflush(stdin);
  scanf("%[^\n]%*c",data);
 
 for(i=0;data[i];i++){
@@ -42,7 +42,7 @@ EN_cardError_t getCardExpiryDate(ST_cardData_t* card){
  char data[6];
  char i=0;
  printf("Enter expiry date as on card [mm/yy] : ");
- 
+ fflush(stdin);
  gets(data);
  
  // check the validity of the date
@@ -70,7 +70,7 @@ EN_cardError_t getCardPAN(ST_cardData_t* card){
   char data[17];
 
   printf("Enter PAN as on card [16 number] : ");
-  
+  fflush(stdin);
   scanf(" %s",data);
 
   for ( i = 0; data[i] ; i++)

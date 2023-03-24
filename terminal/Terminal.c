@@ -50,6 +50,7 @@ EN_terminalError_t getTransactionAmount(ST_terminalData_t* data){
  int amount;
 printf("Enter transaction amount : ");
 // get transaction amount
+fflush(stdin);
 scanf("%d",&amount);
 
 if(amount<=0){
@@ -87,6 +88,7 @@ EN_terminalError_t setMaxAmount(ST_terminalData_t* data){
   int amount;
 printf("Enter transaction max amount : ");
   // get transaction max amount
+  fflush(stdin);
   scanf("%d",&amount);
 
  if(amount<=0){
